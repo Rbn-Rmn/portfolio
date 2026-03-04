@@ -108,7 +108,7 @@ export default function Portfolio() {
         emailjs
             .sendForm(
                 import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_nj1945j",
-                import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_xxxxxxx",
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "__ejs-test-mail-service__",
                 e.target,
                 import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "wYmhSDA1TZieiw0Aq"
             )
