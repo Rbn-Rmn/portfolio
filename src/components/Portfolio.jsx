@@ -780,7 +780,7 @@ export default function Portfolio() {
                     <p>
                         © {new Date().getFullYear()}{" "}
                         <span className="font-semibold shimmer-text">Dewan Sultan</span>
-                        {" "}• Built with React & ❤️
+                        {" "}• Built with ❤️
                     </p>
                 </footer>
             </main>
