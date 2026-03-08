@@ -325,13 +325,16 @@ export default function Portfolio() {
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                    <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        className="text-xl font-black tracking-tight shimmer-text cursor-default"
-                        style={{ fontFamily: "'Syne', sans-serif" }}
+                    <motion.a
+                        href="#about"
+                        whileHover={{ scale: 1.08, rotate: 3 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                        className="cursor-pointer"
+                        aria-label="Home"
                     >
-                        DS
-                    </motion.div>
+                        <img src="/logo.svg" alt="Dewan Sultan Logo" width="44" height="44" />
+                    </motion.a>
 
                     <div className="hidden md:flex items-center gap-1 p-1 rounded-full"
                         style={{ background: darkMode ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.04)" }}>

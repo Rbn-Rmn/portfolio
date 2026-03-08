@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Main gradient -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#06b6d4"/>
+      <stop offset="50%"  stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft inner glow -->
+    <filter id="softglow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Background circle clip -->
+    <clipPath id="circleClip">
+      <circle cx="100" cy="100" r="88"/>
+    </clipPath>
+
+    <!-- Shimmer gradient animation -->
+    <linearGradient id="shimmer" x1="0%" y1="0%" x2="200%" y2="0%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#06b6d4"/>
+      <stop offset="33%"  stop-color="#6366f1"/>
+      <stop offset="66%"  stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-200 0" to="200 0"
+        dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Dark background circle ── -->
+  <circle cx="100" cy="100" r="95" fill="#0f0f1a"/>
+
+  <!-- ── Subtle grid texture ── -->
+  <g clip-path="url(#circleClip)" opacity="0.06">
+    <line x1="12" y1="0" x2="12" y2="200" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="28" y1="0" x2="28" y2="200" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="44" y1="0" x2="44" y2="200" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="60" y1="0" x2="60" y2="200" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="76" y1="0" x2="76" y2="200" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="92" y1="0" x2="92" y2="200" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="108" y1="0" x2="108" y2="200" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="124" y1="0" x2="124" y2="200" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="140" y1="0" x2="140" y2="200" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="156" y1="0" x2="156" y2="200" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="172" y1="0" x2="172" y2="200" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="188" y1="0" x2="188" y2="200" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="0" y1="12" x2="200" y2="12" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="0" y1="28" x2="200" y2="28" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="0" y1="44" x2="200" y2="44" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="0" y1="60" x2="200" y2="60" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="0" y1="76" x2="200" y2="76" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="0" y1="92" x2="200" y2="92" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="0" y1="108" x2="200" y2="108" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="0" y1="124" x2="200" y2="124" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="0" y1="140" x2="200" y2="140" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="0" y1="156" x2="200" y2="156" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="0" y1="172" x2="200" y2="172" stroke="#6366f1" stroke-width="0.5"/>
+    <line x1="0" y1="188" x2="200" y2="188" stroke="#6366f1" stroke-width="0.5"/>
+  </g>
+
+  <!-- ── Outer spinning ring ── -->
+  <circle cx="100" cy="100" r="88" fill="none" stroke="url(#grad1)" stroke-width="1.5" opacity="0.5"
+    stroke-dasharray="60 480">
+    <animateTransform attributeName="transform" type="rotate"
+      from="0 100 100" to="360 100 100" dur="10s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ── Second orbit ring (reverse) ── -->
+  <circle cx="100" cy="100" r="80" fill="none" stroke="url(#grad1)" stroke-width="0.8" opacity="0.25"
+    stroke-dasharray="20 400">
+    <animateTransform attributeName="transform" type="rotate"
+      from="360 100 100" to="0 100 100" dur="14s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ── Corner accent dots on outer ring ── -->
+  <g filter="url(#glow)">
+    <circle cx="100" cy="12" r="3" fill="#06b6d4" opacity="0.9">
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 100 100" to="360 100 100" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="12" r="3" fill="#a855f7" opacity="0.9">
+      <animateTransform attributeName="transform" type="rotate"
+        from="180 100 100" to="540 100 100" dur="10s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ── Hexagon frame ── -->
+  <polygon
+    points="100,30 158,65 158,135 100,170 42,135 42,65"
+    fill="none"
+    stroke="url(#grad1)"
+    stroke-width="1.5"
+    opacity="0.35"
+  />
+
+  <!-- ── Inner hex (rotated 30°) ── -->
+  <polygon
+    points="100,44 147,71 147,129 100,156 53,129 53,71"
+    fill="none"
+    stroke="url(#grad1)"
+    stroke-width="0.8"
+    opacity="0.15"
+    transform="rotate(30 100 100)"
+  />
+
+  <!-- ── Center glow blob ── -->
+  <circle cx="100" cy="100" r="44" fill="#6366f1" opacity="0.07">
+    <animate attributeName="r" values="40;48;40" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.07;0.13;0.07" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ── D letter mark ── -->
+  <!-- Outer D stroke shape -->
+  <path
+    d="M72,66 L72,134 L100,134 C120,134 134,120 134,100 C134,80 120,66 100,66 Z"
+    fill="none"
+    stroke="url(#grad1)"
+    stroke-width="2"
+    opacity="0.3"
+    filter="url(#softglow)"
+  />
+
+  <!-- D letter - bold filled -->
+  <path
+    d="M78,72 L78,128 L99,128 C116,128 127,116 127,100 C127,84 116,72 99,72 Z
+       M86,80 L98,80 C111,80 119,88 119,100 C119,112 111,120 98,120 L86,120 Z"
+    fill="url(#grad1)"
+    filter="url(#glow)"
+  >
+    <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- ── S letter overlaid (bottom-right, small) ── -->
+  <text
+    x="109" y="122"
+    font-family="'Courier New', monospace"
+    font-size="22"
+    font-weight="900"
+    fill="url(#shimmer)"
+    opacity="0.85"
+    filter="url(#softglow)"
+  >S</text>
+
+  <!-- ── Glitch scan line effect ── -->
+  <rect x="12" y="97" width="176" height="1.5" fill="#06b6d4" opacity="0">
+    <animate attributeName="y" values="20;180;20" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.08;0.08;0" keyTimes="0;0.1;0.9;1" dur="5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ── Corner tick marks ── -->
+  <g stroke="url(#grad1)" stroke-width="2" opacity="0.6" stroke-linecap="round">
+    <!-- top-left -->
+    <line x1="26" y1="42" x2="26" y2="34"/><line x1="26" y1="34" x2="34" y2="34"/>
+    <!-- top-right -->
+    <line x1="174" y1="42" x2="174" y2="34"/><line x1="174" y1="34" x2="166" y2="34"/>
+    <!-- bottom-left -->
+    <line x1="26" y1="158" x2="26" y2="166"/><line x1="26" y1="166" x2="34" y2="166"/>
+    <!-- bottom-right -->
+    <line x1="174" y1="158" x2="174" y2="166"/><line x1="174" y1="166" x2="166" y2="166"/>
+  </g>
+
+  <!-- ── Outer border ring ── -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#grad1)" stroke-width="1.5" opacity="0.6"/>
+</svg>
