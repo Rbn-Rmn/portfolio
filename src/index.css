@@ -1,16 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;900&family=Syne:wght@700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ──────────────────────────────────────────────
-   Modern root variables (light + dark automatic via light-dark() where supported)
-   Fallbacks for older browsers
-   ────────────────────────────────────────────── */
 :root {
-  --bg-primary: #f8fafc; /* slate-50 light */
+  --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
-  --text-primary: #0f172a; /* slate-900 */
-  --text-secondary: #475569; /* slate-600 */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
   --accent-start: #22d3ee;
   --accent-mid: #6366f1;
   --accent-end: #7c3aed;
@@ -20,10 +18,10 @@
 }
 
 .dark {
-  --bg-primary: #020617; /* slate-950 */
-  --bg-secondary: #0f172a; /* slate-900 */
-  --text-primary: #f1f5f9; /* slate-100 */
-  --text-secondary: #94a3b8; /* slate-400 */
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
   --accent-start: #22d3ee;
   --accent-mid: #818cf8;
   --accent-end: #a78bfa;
@@ -32,7 +30,6 @@
   --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
-/* Optional: use CSS variables in classes */
 .bg-glass {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
@@ -41,7 +38,7 @@
   box-shadow: var(--shadow-glass);
 }
 
-/* Keep your custom animations */
+/* ── Typing cursor ── */
 @keyframes blink {
   0%,
   100% {
@@ -51,10 +48,12 @@
     opacity: 0;
   }
 }
-.animate-blink {
+.animate-blink,
+.blink {
   animation: blink 1s step-end infinite;
 }
 
+/* ── Hero orb pulse ── */
 @keyframes pulse-slow {
   0%,
   100% {
@@ -70,6 +69,7 @@
   animation: pulse-slow 8s ease-in-out infinite;
 }
 
+/* ── Slow spin (profile ring) ── */
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -82,7 +82,39 @@
   animation: spin-slow 30s linear infinite;
 }
 
-/* Optional bonus: smooth gradient text utility */
+/* ── Avatar float ── */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ── Shimmer gradient text ── */
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+.shimmer-text {
+  background: linear-gradient(270deg, #06b6d4, #6366f1, #a855f7, #06b6d4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Legacy gradient text ── */
 .gradient-text {
   background: linear-gradient(
     to right,
@@ -93,4 +125,38 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* ── Card hover glow ── */
+.card-glow:hover {
+  box-shadow:
+    0 0 40px rgba(99, 102, 241, 0.15),
+    0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Noise texture overlay ── */
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ── Smooth scrolling ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #06b6d4, #6366f1);
+  border-radius: 999px;
 }
