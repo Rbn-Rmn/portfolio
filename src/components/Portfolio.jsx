@@ -634,8 +634,8 @@ export default function Portfolio() {
 
                     <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
                         {[
-                            { label: "Projects Built", value: "20+", color: "#06b6d4" },
-                            { label: "Algorithms Solved", value: "300+", color: "#6366f1" },
+                            { label: "Projects Built", value: "...", color: "#06b6d4" },
+                            { label: "Algorithms Solved", value: "...", color: "#6366f1" },
                             { label: "Coffee Consumed", value: "∞", color: "#a855f7" },
                             { label: "Years Learning", value: "3+", color: "#f59e0b" },
                         ].map((stat, i) => (
