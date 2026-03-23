@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Portfolio Preview](public/preview.png)
+![Portfolio Preview](public/fpreview.png)
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-dewansultan.vercel.app-6366f1?style=for-the-badge&logo=vercel&logoColor=white)](https://dewansultan.vercel.app)
 [![React](https://img.shields.io/badge/React-18-06b6d4?style=for-the-badge&logo=react&logoColor=white)](https://react.dev)
